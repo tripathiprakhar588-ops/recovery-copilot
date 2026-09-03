@@ -1,0 +1,95 @@
+{
+  "total_events": 200,
+  "recovered_events": 107,
+  "event_recovery_rate": 0.535,
+  "total_at_risk": 2334774.97,
+  "recovered_amount": 1272526.35,
+  "unrecovered_amount": 1062248.62,
+  "amount_recovery_rate": 0.5450316909984692,
+  "total_attempts": 440,
+  "avg_attempts_per_event": 2.2,
+  "by_cause": {
+    "issuer_decline": {
+      "count": 17,
+      "recovered": 8,
+      "at_risk": 212172.3,
+      "recovered_amt": 96144.68
+    },
+    "insufficient_funds": {
+      "count": 33,
+      "recovered": 19,
+      "at_risk": 391980.2500000001,
+      "recovered_amt": 210022.72000000003
+    },
+    "abandon_at_payment": {
+      "count": 23,
+      "recovered": 9,
+      "at_risk": 194563.75,
+      "recovered_amt": 88258.89
+    },
+    "otp_failure": {
+      "count": 20,
+      "recovered": 11,
+      "at_risk": 246039.34999999998,
+      "recovered_amt": 148692.47999999998
+    },
+    "mandate_expired": {
+      "count": 20,
+      "recovered": 7,
+      "at_risk": 308034.0399999999,
+      "recovered_amt": 103200.07999999999
+    },
+    "network_drop": {
+      "count": 7,
+      "recovered": 6,
+      "at_risk": 61228.51,
+      "recovered_amt": 54368.83
+    },
+    "abandon_at_review": {
+      "count": 12,
+      "recovered": 8,
+      "at_risk": 94906.36,
+      "recovered_amt": 67358.47
+    },
+    "bank_timeout": {
+      "count": 21,
+      "recovered": 16,
+      "at_risk": 319009.36,
+      "recovered_amt": 255330.65000000002
+    },
+    "expired_card": {
+      "count": 11,
+      "recovered": 4,
+      "at_risk": 177935.83000000002,
+      "recovered_amt": 80966.95
+    },
+    "abandon_at_address": {
+      "count": 9,
+      "recovered": 2,
+      "at_risk": 55770.969999999994,
+      "recovered_amt": 13124.77
+    },
+    "abandon_at_otp": {
+      "count": 16,
+      "recovered": 11,
+      "at_risk": 120341.10000000002,
+      "recovered_amt": 87502.19
+    },
+    "limit_exceeded": {
+      "count": 11,
+      "recovered": 6,
+      "at_risk": 152793.15,
+      "recovered_amt": 67555.64
+    }
+  },
+  "by_type": {
+    "payment_failure": {
+      "count": 140,
+      "recovered": 77
+    },
+    "checkout_abandonment": {
+      "count": 60,
+      "recovered": 30
+    }
+  }
+}

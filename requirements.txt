@@ -1,0 +1,12 @@
+# Core pipeline (required to run main.py)
+pandas>=2.0
+matplotlib>=3.7
+
+# API/server layer (required only for api.py)
+flask>=3.0
+
+# Optional dashboard (required only for app.py / streamlit run app.py)
+streamlit>=1.30
+
+# Optional AI-personalized messaging (required only if you set ANTHROPIC_API_KEY)
+anthropic>=0.40

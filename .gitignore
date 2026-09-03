@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.DS_Store
+
+# NOTE: outputs/ and data/synthetic_events.csv are committed on purpose so
+# the repo shows a working example the moment someone opens it on GitHub.
+# Re-running `python main.py` regenerates them deterministically (fixed seed).
+
