@@ -1,15 +1,10 @@
 # Recovery Copilot
 
-**Razorpay AI Buildathon 2026 — Track 03: AI Revenue Recovery**
+
 
 An agent that detects revenue slipping away from a merchant — failed
 payments and abandoned checkouts — diagnoses *why* each one happened, and
 runs a bounded, auditable recovery workflow to win the money back.
-
-> Built for the track's stated bar: *"Don't just identify the problem.
-> Show measured money recovered across a batch, with compliant escalation,
-> stopping rules, and an audit trail."* Every one of those four things is a
-> real, checkable artifact in this repo, not a claim in a slide.
 
 ---
 
@@ -35,7 +30,7 @@ a differentiator.
 | Hard-capped retries per root cause (`max_attempts` in `diagnose.py`) | This *is* the "bounded" and "stopping rules" requirement from the brief, enforced in code, not described in prose. |
 | Flat CSV audit trail | Any reviewer can open it in Excel. No database, no hidden state. |
 | Template messaging by default, LLM personalization optional | The pipeline runs and produces real, measurable results with zero API keys and zero cost. If `ANTHROPIC_API_KEY` is set, the messaging layer calls Claude to warm up the tone — this is where "AI" is used *meaningfully* rather than bolted on everywhere for the sake of it. |
-| Synthetic data with documented assumptions | There's no live Razorpay merchant data available for a hackathon submission, so success probabilities are clearly labeled as illustrative assumptions in `src/diagnose.py` and are trivially swappable for real historical rates. |
+
 
 ## 3. Architecture
 
@@ -69,7 +64,7 @@ Three entry points sit on top of the same `src/` logic:
   trail + HTML report + JSON summary. This is the one to run for the actual
   submission artifacts.
 - **`api.py`** — Flask REST API layer, so the pipeline can be called by a
-  real system (e.g. a Razorpay webhook) instead of only from the CLI.
+  real system  instead of only from the CLI.
 - **`app.py`** — optional Streamlit dashboard for the live 5-minute pitch
   video, with adjustable batch size and filterable audit trail.
 
@@ -154,8 +149,7 @@ failures + 60 checkout abandonments) and reports roughly:
 
 These numbers come from the `est_success_prob` assumptions in
 `src/diagnose.py`, which are reasonable but invented placeholders (e.g.
-"a bank-timeout retry succeeds ~55% of the time"), not measurements from
-real Razorpay data. **This is stated on the report itself** so it's honest
+"a bank-timeout retry succeeds ~55% of the time"). **This is stated on the report itself** so it's honest
 with anyone reviewing it. The entire point of the architecture is that
 these numbers become real the moment you plug in actual historical
 recovery rates — nothing else in the pipeline needs to change.
