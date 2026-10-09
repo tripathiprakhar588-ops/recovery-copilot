@@ -18,7 +18,7 @@ Copilot reads a batch of these events, runs them through a transparent
 rule-based diagnosis (not a black-box model — auditable by design for a
 money-moving system), and executes a capped retry/nudge sequence per event,
 logging every single action it takes. It also speaks **Hinglish**, because
-that's how a large share of Razorpay's actual customer base reads a payment
+that's how a large share of  actual customer base reads a payment
 reminder most naturally — the buildathon brief calls this out explicitly as
 a differentiator.
 
@@ -65,8 +65,6 @@ Three entry points sit on top of the same `src/` logic:
   submission artifacts.
 - **`api.py`** — Flask REST API layer, so the pipeline can be called by a
   real system  instead of only from the CLI.
-- **`app.py`** — optional Streamlit dashboard for the live 5-minute pitch
-  video, with adjustable batch size and filterable audit trail.
 
 ## 4. Project structure
 
@@ -168,9 +166,9 @@ recovery rates — nothing else in the pipeline needs to change.
 
 ## 8. Extending this for the real thing
 
-- **Real data**: swap `data/synthetic_events.csv` for Razorpay webhook
+- **Real data**: swap `data/synthetic_events.csv` for webhook
   payloads (payment.failed events, cart/session abandonment events). The
-  field names in `generate_data.py` are already modeled on real Razorpay
+  field names in `generate_data.py` are already modeled on real
   failure-reason vocabulary.
 - **Real success rates**: replace `est_success_prob` in `diagnose.py` with
   actual historical recovery rates per failure code — this is a one-line
